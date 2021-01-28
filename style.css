@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+:root{
+    --v:#000000;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 1.5em;
+  background-color:azure;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+.headers>*:last-child{
+    margin-top: 0;
+}
+.headers>*:first-child{
+    margin-bottom: 0;
+}
+.headers>*:not(:first-child,:last-child){
+    margin: 0;
+}
+.links{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.container{
+    max-width: 800px;
+    margin:0 auto;
+}
+#page1{
+    background-color: floralwhite;
+    --calcdim: calc(22vw + 25px); 
+    /* For height of top level element and translateY of image */
+    --half: calc(var(--calcdim) / 2);
+}
+.pp{
+    max-height: 200px;
+    min-height: 130px;
+    height: --calcdim;
+    background-color:rgb(185, 175, 82);
+}
+.pp > .image {
+    background-color:antiquewhite;
+    border-radius: 50%;
+    height: max(130px,var(--calcdim));
+    width: max(130px,var(--calcdim));
+    max-width: 200px;
+    align-self: center;
+    display:flex;
+    align-items:center;
+    transform: translateY(var(--half));
+}
+.pp > .image > img {
+
+}
+.intro{
+    padding: calc(var(--half) - 20px) 0 0 0;
+}
