@@ -19,6 +19,7 @@ body[dark] {
   --mainfont: var(--white3);
   --sidefont: var(--black3);
   --contrast: var(--contrast2);
+  --link: #dff516;
 }
 body {
   --main-bg: var(--white2);
@@ -27,6 +28,10 @@ body {
   --mainfont: var(--black1);
   --sidefont: var(--white2);
   --contrast: var(--contrast1);
+  --link: blue;
+}
+a {
+  color: var(--link);
 }
 .colorchange {
   width: 30px;
@@ -104,10 +109,10 @@ body {
   padding: calc(var(--half) - 20px) 0 0 0;
 }
 .skills > .skill.show {
-  height : auto;
+  height: auto;
   animation: backwards yole;
   animation-duration: 1s;
-  transition:all 1s;
+  transition: all 1s;
 }
 .skills > .skill {
   display: flex;
@@ -117,19 +122,19 @@ body {
   transition: all 1s;
   flex-direction: row;
   flex-wrap: wrap;
-  overflow:hidden;
+  overflow: hidden;
   background-color: var(--contrast);
 }
-@keyframes yole{
-    0%{
-        height: 0px;
-    }
-    50%{
-        height: 0px;
-    }
-    100% {
-        height:0px;
-    }
+@keyframes yole {
+  0% {
+    height: 0px;
+  }
+  50% {
+    height: 0px;
+  }
+  100% {
+    height: 0px;
+  }
 }
 .skills > .links > div {
   display: flex;
@@ -206,16 +211,16 @@ body {
     transform: rotate(405deg);
   }
 }
-button{
-    padding: 20px 30px;
-    border-radius: 18px;
-    border: 0;
-    background-color:var(--main-bg);
-    background: linear-gradient(20deg, var(--main-bg), #0000);
-    color: var(--mainfont);
-    transition:0.5s all;
+button {
+  padding: 20px 30px;
+  border-radius: 18px;
+  border: 0;
+  background-color: var(--main-bg);
+  background: linear-gradient(20deg, var(--main-bg), #0000);
+  color: var(--mainfont);
+  transition: 0.5s all;
 }
-button:hover{
-    color:var(--sidecolor);
-    background-color: var(--contrast);
+button:hover {
+  color: var(--sidecolor);
+  background-color: var(--contrast);
 }
