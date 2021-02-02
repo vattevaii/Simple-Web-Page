@@ -64,6 +64,7 @@ body {
   flex-direction: row;
   justify-content: space-around;
 }
+
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -102,13 +103,33 @@ body {
 .intro {
   padding: calc(var(--half) - 20px) 0 0 0;
 }
-.skills > .skill:target {
-  display: flex;
+.skills > .skill.show {
+  height : auto;
+  animation: backwards yole;
+  animation-duration: 1s;
+  transition:all 1s;
 }
 .skills > .skill {
-  display: none;
+  display: flex;
+  height: 0px;
+  animation: forwards yole;
+  animation-duration: 1s;
+  transition: all 1s;
   flex-direction: row;
   flex-wrap: wrap;
+  overflow:hidden;
+  background-color: var(--contrast);
+}
+@keyframes yole{
+    0%{
+        height: 0px;
+    }
+    50%{
+        height: 0px;
+    }
+    100% {
+        height:0px;
+    }
 }
 .skills > .links > div {
   display: flex;
@@ -184,4 +205,17 @@ body {
   100% {
     transform: rotate(405deg);
   }
+}
+button{
+    padding: 20px 30px;
+    border-radius: 18px;
+    border: 0;
+    background-color:var(--main-bg);
+    background: linear-gradient(20deg, var(--main-bg), #0000);
+    color: var(--mainfont);
+    transition:0.5s all;
+}
+button:hover{
+    color:var(--sidecolor);
+    background-color: var(--contrast);
 }
