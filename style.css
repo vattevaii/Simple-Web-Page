@@ -74,6 +74,8 @@ body {
   max-width: 800px;
   margin: 0 auto;
 }
+@media screen and (max-width:480px){
+}
 #page1 {
   background-color: var(--bg);
   color: var(--mainfont);
@@ -212,7 +214,7 @@ body {
   }
 }
 button {
-  padding: 20px 30px;
+  padding: 20px min(5vw,30px);
   border-radius: 18px;
   border: 0;
   background-color: var(--main-bg);
