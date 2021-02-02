@@ -224,7 +224,7 @@ button {
   background: linear-gradient(20deg, var(--main-bg), #0000);
   color: var(--mainfont);
   transition: 0.5s all;
-  font-size: 1em;
+  font-size: .75em;
 }
 button:hover {
   color: var(--sidecolor);
