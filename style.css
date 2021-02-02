@@ -100,6 +100,7 @@ body {
   /* transform: rotate(30deg); */
   animation: anim 3s infinite linear;
   background-color: rgba(21, 21, 196, 0.308);
+  background: linear-gradient(0deg, red,blue);
 }
 .skills .progess>.before {
     --va: attr(progress);
@@ -117,12 +118,18 @@ body {
   animation: anima 2s infinite linear;
   /* background-color: rgba(159, 159, 219, 0.192); */
 }
+.skills .progess>.data{
+    position:absolute;
+    align-self: center;
+    z-index: 10;
+    margin: 0 21px;
+}
 @keyframes anima {
   0% {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(180deg);
+    transform: rotate(360deg);
   }
 }
 @keyframes anim {
@@ -130,6 +137,6 @@ body {
     transform: rotate(45deg);
   }
   100% {
-    transform: rotate(225deg);
+    transform: rotate(405deg);
   }
 }
