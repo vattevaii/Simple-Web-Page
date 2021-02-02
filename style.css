@@ -9,20 +9,24 @@
   --white1: #989898;
   --white2: #afafaf;
   --white3: #eee;
+  --contrast1: #d4d4d4;
+  --contrast2: #5c5c5c;
 }
-#page1[dark] {
+body[dark] {
   --main-bg: var(--black2);
   --bg: var(--black3);
   --sidecolor: var(--white);
   --mainfont: var(--white3);
   --sidefont: var(--black3);
+  --contrast: var(--contrast2);
 }
-#page1 {
+body {
   --main-bg: var(--white2);
   --bg: var(--white3);
   --sidecolor: var(--black3);
   --mainfont: var(--black1);
   --sidefont: var(--white2);
+  --contrast: var(--contrast1);
 }
 .colorchange {
   width: 30px;
@@ -65,7 +69,8 @@ body {
   margin: 0 auto;
 }
 #page1 {
-  background-color: floralwhite;
+  background-color: var(--bg);
+  color: var(--mainfont);
   --calcdim: calc(22vw + 25px);
   /* For height of top level element and translateY of image */
   --half: calc(var(--calcdim) / 2);
@@ -74,7 +79,7 @@ body {
   max-height: 200px;
   min-height: 130px;
   height: --calcdim;
-  background-color: rgb(185, 175, 82);
+  background-color: var(--contrast);
 }
 .pp > .image {
   background-color: antiquewhite;

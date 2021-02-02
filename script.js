@@ -27,5 +27,5 @@ for (i = 0; i < progess.length; i++) {
 }
 
 var changeScheme = function(){
-    document.getElementById("page1").toggleAttribute("dark");
+    document.body.toggleAttribute("dark");
 }
