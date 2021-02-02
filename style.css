@@ -91,6 +91,8 @@ body {
 .pp > .image > img {
   height: inherit;
   width: inherit;
+  max-height: 200px;
+  max-width: 200px;
 }
 .intro {
   padding: calc(var(--half) - 20px) 0 0 0;
