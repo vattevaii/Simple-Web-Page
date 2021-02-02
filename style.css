@@ -3,12 +3,41 @@
 }
 :root {
   --v: #000000;
+  --black1: #222;
+  --black2: #2d2d2d;
+  --black3: #3d3d3d;
+  --white1: #989898;
+  --white2: #afafaf;
+  --white3: #eee;
+}
+#page1[dark] {
+  --main-bg: var(--black2);
+  --bg: var(--black3);
+  --sidecolor: var(--white);
+  --mainfont: var(--white3);
+  --sidefont: var(--black3);
+}
+#page1 {
+  --main-bg: var(--white2);
+  --bg: var(--white3);
+  --sidecolor: var(--black3);
+  --mainfont: var(--black1);
+  --sidefont: var(--white2);
+}
+.colorchange {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: var(--bg);
+  cursor: pointer;
 }
 body {
   padding: 0;
   margin: 0;
   font-size: 1.5em;
-  background-color: azure;
+  background-color: var(--main-bg);
 }
 .center {
   display: flex;
@@ -57,21 +86,27 @@ body {
   display: flex;
   align-items: center;
   transform: translateY(var(--half));
+  overflow: hidden;
 }
 .pp > .image > img {
+  height: inherit;
+  width: inherit;
 }
 .intro {
   padding: calc(var(--half) - 20px) 0 0 0;
 }
-.skills > .links {
+.skills > .skill:target {
   display: flex;
+}
+.skills > .skill {
+  display: none;
   flex-direction: row;
   flex-wrap: wrap;
 }
 .skills > .links > div {
   display: flex;
   flex-direction: column;
-    width: 30%;
+  width: 40%;
   margin: 30px 0;
 }
 .skills .progess {
@@ -83,32 +118,35 @@ body {
   line-height: calc(3em - 4px);
   overflow: hidden;
   border-radius: 50%;
+  color: antiquewhite;
 }
-.skills .progess>.after {
-    --va: attr(progress);
+.skills .progess > .after {
+  --va: attr(progress);
   content: "";
   display: block;
   position: absolute;
   left: -1.5em;
+  top: 10px;
   /* top: 0; */
-  height: calc(5em + 30px);
+  height: calc(5em + 20px);
   width: calc(5em + 10px);
   transform: rotate(30deg);
   transition: linear;
   border-radius: 50%;
   /* transform-origin: 0 -68px;  */
   /* transform: rotate(30deg); */
-  animation: anim 3s infinite linear;
+  animation: anim 5s infinite linear;
   background-color: rgba(21, 21, 196, 0.308);
-  background: linear-gradient(0deg, red,blue);
+  background: linear-gradient(0deg, red, blue);
 }
-.skills .progess>.before {
-    --va: attr(progress);
+.skills .progess > .before {
+  --va: attr(progress);
   border-radius: 50%;
   content: "";
   display: block;
   position: absolute;
   left: -1.5em;
+  top: 10px;
   height: calc(5em + 30px);
   width: calc(5em + 20px);
   /* transform: translate(0,-68px); */
@@ -118,11 +156,11 @@ body {
   animation: anima 2s infinite linear;
   /* background-color: rgba(159, 159, 219, 0.192); */
 }
-.skills .progess>.data{
-    position:absolute;
-    align-self: center;
-    z-index: 10;
-    margin: 0 21px;
+.skills .progess > .data {
+  position: absolute;
+  align-self: center;
+  z-index: 10;
+  margin: 0 21px;
 }
 @keyframes anima {
   0% {

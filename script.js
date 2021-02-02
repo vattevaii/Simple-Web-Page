@@ -25,3 +25,7 @@ for (i = 0; i < progess.length; i++) {
   // progess[i].pseudoStyle("after","top",data+"px");
   // // window.alert(data);
 }
+
+var changeScheme = function(){
+    document.getElementById("page1").toggleAttribute("dark");
+}
