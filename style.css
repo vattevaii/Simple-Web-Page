@@ -4,13 +4,13 @@
 :root {
   --v: #000000;
   --black1: #222;
-  --black2: #2d2d2d;
-  --black3: #3d3d3d;
-  --white1: #989898;
+  --black2: #2d2d2d55;
+  --black3: #3d3d3d94;
+  --white1: #98989855;
   --white2: #afafaf;
-  --white3: #eee;
-  --contrast1: #d4d4d4;
-  --contrast2: #5c5c5c;
+  --white3: #eeeb;
+  --contrast1: #d4d4d410;
+  --contrast2: #5c5c5c80;
 }
 body[dark] {
   --main-bg: var(--black2);
@@ -46,7 +46,8 @@ body {
   padding: 0;
   margin: 0;
   font-size: 1.5em;
-  background-color: var(--main-bg);
+  background-image: url("./pictures/pejg7ub6.bmp");
+  background-size: cover;
 }
 .center {
   display: flex;
@@ -74,8 +75,8 @@ body {
   max-width: 800px;
   margin: 0 auto;
 }
-@media screen and (max-width:480px){
-  .container{
+@media screen and (max-width: 480px) {
+  .container {
     width: 100%;
   }
 }
@@ -86,11 +87,24 @@ body {
   /* For height of top level element and translateY of image */
   --half: calc(var(--calcdim) / 2);
 }
+
 .pp {
   max-height: 200px;
   min-height: 130px;
   height: --calcdim;
+  background-image: url("./pictures/pejg7ub6.bmp");
+  background-size: cover;
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+.pp::before {
+  content: "";
+  position: absolute;
   background-color: var(--contrast);
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 .pp > .image {
   background-color: antiquewhite;
@@ -115,14 +129,13 @@ body {
 }
 .skills > .skill.show {
   height: auto;
-  animation: backwards yole;
+  animation: forwards yole;
   animation-duration: 1s;
   transition: all 1s;
 }
 .skills > .skill {
   display: flex;
-  height: 0px;
-  animation: forwards yole;
+  height: 0;
   animation-duration: 1s;
   transition: all 1s;
   flex-direction: row;
@@ -132,13 +145,10 @@ body {
 }
 @keyframes yole {
   0% {
-    height: 0px;
-  }
-  50% {
-    height: 0px;
+    height: 0em;
   }
   100% {
-    height: 0px;
+    height: 20em;
   }
 }
 .skills > .links > div {
@@ -217,7 +227,7 @@ body {
   }
 }
 button {
-  padding: 20px min(5vw,30px);
+  padding: 20px min(5vw, 30px);
   border-radius: 18px;
   border: 0;
   background-color: var(--main-bg);
